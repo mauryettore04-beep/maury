@@ -1,6 +1,7 @@
+  float f = 1000;
 void setup() {
   Serial.begin(9600);
-  tone(7, 600);
+  tone(7, f);
   pinMode(11, OUTPUT);
   pinMode(10, INPUT);
   digitalWrite(11, LOW);
@@ -20,7 +21,7 @@ float prendiDistanza(float vS) {
   long durata = pulseIn(10, HIGH);
   return (durata*vS*1.e-6) / 2;
 }
-
+float vmax = 0;
 void loop() {
   //float fm = analogRead(A1);
   //float vcampione = 0; //da vedere tramite sperimentazione quale è la fluttuazione da fermo
@@ -39,7 +40,7 @@ void loop() {
   }
   else
   {
-    tone(7,440);
+    tone(7,f);
   }
   Serial.print("d1:");
   Serial.println(d1);
@@ -63,12 +64,11 @@ void loop() {
   //Serial.print(" Velocità Oggetto: "); 
   //Serial.println(vo);
 //calcolo effetto doppler aspettato
-  //if(vo>vcampione){
-  //float fd = 440*(vs/(vs-vo));
-  //Serial.print("frequenza shiftata: "); Serial.println(fd);
-  //.print("frequenza misurata: "); Serial.println(fm);
-//}
+if(vo>vmax)
+{
+  vmax=vo;
+  float fd = 440*(vs2/(vs2-vo));
+Serial.print("frequenza shiftata: "); 
+Serial.println(fd);
 }
-
-
-
+}
