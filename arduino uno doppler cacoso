@@ -1,18 +1,18 @@
 void setup() {
   Serial.begin(9600);
   tone(7,440);
-  pinMode(9,OUTPUT);
+  pinMode(11,OUTPUT);
   pinMode(10, INPUT);
   pinMode(6, INPUT);
 
 }
 
 float prendiDistanza(float vS) {
-  digitalWrite(9, LOW);
+  digitalWrite(11, LOW);
   delayMicroseconds(2);
-  digitalWrite(9, HIGH);
+  digitalWrite(11, HIGH);
   delayMicroseconds(10); 
-  digitalWrite(9, LOW);
+  digitalWrite(11, LOW);
   long durata = pulseIn(10, HIGH);
   return (durata * vS*1e-6) / 2;
 }
