@@ -29,7 +29,7 @@ for (int i=0; i<N; i++)
 		sum = 0;
 		for(int j=0; j<N; j++)
 		{
-			sum = sum + M[i][j]*J[j][i];
+			sum = sum + M[i][j]*J[j][km];
 		}
 		S[i][k] = sum;
 	}
