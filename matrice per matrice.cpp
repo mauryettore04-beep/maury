@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+const int N=2; //potrei are variante on isnerimento di indici da parte dell'utente per le matrici ma dovrei poi mnmettere un if per far si che numjero righe uguale numero colonne sennò non si può fare la somma
+int main()
+{
+double M[N][N], J[N][N], S[N][N],sum;
+cout<<"inseriesci i dati della matrice M"<<endl;
+for (int i=0; i<N; i++)
+{
+	for(int j=0; j<N; j++)
+	{
+		cin>>M[i][j];
+	}
+	
+}
+cout<<"inseriesci i dati della matrice J"<<endl;
+for (int i=0; i<N; i++)
+{
+	for(int j=0; j<N; j++)
+	{
+		cin>>J[i][j];
+	}
+	
+}
+for (int i=0; i<N; i++)
+{
+	for(int k=0; k<N; k++)
+	{
+		sum = 0;
+		for(int j=0; j<N; j++)
+		{
+			sum = sum + M[i][j]*J[j][k];
+		}
+		S[i][k] = sum;
+	}
+}
+cout<<"ecco il prodtto righe per colonne della matrice M e J"<<endl;
+for (int i=0; i<N; i++)
+{
+	for(int j=0; j<N; j++)
+	{
+		cout<<S[i][j] <<" ";
+	}
+	cout<<endl;
+}
+return 0;
+}
