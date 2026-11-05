@@ -24,10 +24,10 @@ int main()
 	{
 		n1 = n1+1;
 	}
-	string M[n1][n1];
+	string M[n1][(2*n1)+1];
 	for (int i=0; i<n1; i++)
 	{
-		for (int k=0; k<n1; k++) 
+		for (int k=0; k<(2*n1)+1; k++) 
 		{
 			M[i][k] = " ";
 		}
@@ -45,7 +45,6 @@ int main()
 				j = j+2;
 			}
 			a++;
-			j--;
 			a = a-j;
 		}
 	}
