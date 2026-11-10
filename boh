@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+constexpr int N1=3;
+constexpr int N2=2;
+int k=1;
+
+void leggiarr(double x[], int n)
+{
+    cout<<"inserisci il " <<k <<"° array di "<<n <<" elementi"<<endl;
+    for(int i=0; i<n; i++)
+    {
+        cin>>x[i];
+    }
+    k++;
+}
+void scriviarr(double x[], int n)
+{
+    cout<<"ecco l'array di " <<n <<" elementi:"<<endl;
+    for(int i=0; i<n; i++)
+    {
+        cout<<x[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main() 
+{
+    double A[N1],B[N2];
+    leggiarr(A,N1);
+    leggiarr(B,N2);
+    scriviarr(A,N1);
+    scriviarr(B,N2);
+    return 0;
+}
